@@ -1,17 +1,23 @@
 pipeline {
     agent { docker 'node:14.5.0-alpine3.10' }
+    environment {
+        GITHUB_TOKEN     = credentials('GITHUB_TOKEN')
+    }
     stages {
-        stage('build') {
+        stage('install') {
             steps {
-                sh 'npm --version'
-                sh '''
-                  echo "Multiline shell steps works too"
-                  ls -lah
-                '''
                 // install git
                 sh 'apk add git'
-                sh 'git --help'
+                sh 'git --version'
             }
+        }
+        state("update") {
+                sh 'echo "update a file" > update.txt'
+                sh 'git config --local user.email "jenkins@github.com"'
+                sh 'git config --local user.name "Jenkins pipeline"'
+                sh 'git add .'
+                sh 'git commit -m "jenkins test: update a file "'
+                sh 'echo $GITHUB_TOKEN'
         }
     }
 }
