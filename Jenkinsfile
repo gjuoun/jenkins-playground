@@ -8,6 +8,8 @@ pipeline {
                   echo "Multiline shell steps works too"
                   ls -lah
                 '''
+                // install git
+                sh 'apk add docker'
                 sh 'git --help'
             }
         }
