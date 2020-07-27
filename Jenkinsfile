@@ -9,7 +9,7 @@ pipeline {
                   ls -lah
                 '''
                 // install git
-                sh 'apk add docker'
+                sh 'apk add git'
                 sh 'git --help'
             }
         }
