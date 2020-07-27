@@ -11,7 +11,7 @@ pipeline {
                 sh 'git --version'
             }
         }
-        state("update") {
+        stage("update") {
                 sh 'echo "update a file" > update.txt'
                 sh 'git config --local user.email "jenkins@github.com"'
                 sh 'git config --local user.name "Jenkins pipeline"'
