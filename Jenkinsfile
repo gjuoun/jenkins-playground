@@ -13,6 +13,7 @@ pipeline {
         }
         stage("update") {
             steps{
+                sh 'echo "trigger a build"'
                 sh 'echo "update a file" > update.txt'
                 sh 'git add .'
                 sh 'git commit -m "jenkins test: update a file "'
