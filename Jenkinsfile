@@ -27,7 +27,7 @@ pipeline {
                 sh 'echo $GITHUB_TOKEN'
                 sh 'git config --global user.name "gjuoun"'
                 sh 'git config --global user.email "gjuoun@gmail.com"'
-                sh 'git push -u origin master'
+                sh 'git push'
             }
         }   
     }
