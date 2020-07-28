@@ -28,7 +28,7 @@ pipeline {
                 sh 'git config --global user.email "gjuoun@gmail.com"'
                 sshagent(['dcf3d005-8830-4507-8b77-98dc50d41deb']) 
                     {
-                        sh('git push') 
+                        sh('git push -u origin master') 
                     }
             }
         }   
