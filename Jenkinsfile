@@ -14,7 +14,6 @@ pipeline {
             steps {
                 sh 'echo install git'
                 sh 'apk add git'
-                sh 'echo trigger agin'
             }
         }
         stage("update") {
