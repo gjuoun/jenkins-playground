@@ -13,7 +13,7 @@ pipeline {
         stage('install') {
             steps {
                 sh 'echo install git'
-            
+                sh 'apk install git'
             }
         }
         stage("update") {
@@ -24,7 +24,10 @@ pipeline {
                 sh 'echo $GITHUB_TOKEN'
                 sh 'git config --global user.name "gjuoun"'
                 sh 'git config --global user.email "gjuoun@gmail.com"'
-                sh 'git push'
+                sshagent(['dcf3d005-8830-4507-8b77-98dc50d41deb']) 
+                    {
+                        sh('git push') 
+                    }
             }
         }   
     }
