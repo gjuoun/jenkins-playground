@@ -1,7 +1,6 @@
 pipeline {
     agent { docker 'node:14.5.0-alpine3.10' }
-    environment {
-    }
+    
     stages {
         stage("environment check"){
             steps {
