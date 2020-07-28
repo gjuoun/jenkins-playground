@@ -18,6 +18,7 @@ pipeline {
         }
         stage("update") {
             steps{
+                git branch: 'master', credentialsId: 'dcf3d005-8830-4507-8b77-98dc50d41deb', url: 'https://github.com/gjuoun/jenkins-playground.git'
                 sh 'echo "test update" > update.txt'
                 sh 'git status'
                 sh 'git add .'
