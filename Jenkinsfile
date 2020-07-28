@@ -14,6 +14,7 @@ pipeline {
             steps {
                 sh 'echo install git'
                 sh 'apk add git'
+                
             }
         }
         stage("update") {
