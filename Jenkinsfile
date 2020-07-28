@@ -4,6 +4,11 @@ pipeline {
         GITHUB_TOKEN     = credentials('github_token')
     }
     stages {
+        stage("environment check"){
+            steps {
+                sh 'echo ${JOB_NAME}-${BUILD_NUMBER}'
+            }
+        }
         stage('install') {
             steps {
                 // install git
