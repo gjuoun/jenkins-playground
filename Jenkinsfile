@@ -25,15 +25,11 @@ pipeline {
                 sh 'git add .'
                 sh 'git commit -m "jenkins test: update a file "'
                 sh 'echo $GITHUB_TOKEN'
-            }
-        }
-        stage("push changes"){
-            steps{
                 sh 'git config --global user.name "gjuoun"'
                 sh 'git config --global user.email "gjuoun@gmail.com"'
                 sh 'git push -u origin master'
             }
-        }
+        }   
     }
 }
 
