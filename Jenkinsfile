@@ -22,10 +22,9 @@ pipeline {
         stage("push changes"){
             steps{
                 git credentialsId: 'dcf3d005-8830-4507-8b77-98dc50d41deb', url: 'https://github.com/gjuoun/jenkins-playground.git'
-                sh 'git remote add origin https://github.com/gjuoun/jenkins-playground.git'
                 sh 'git config --global user.name "gjuoun"'
                 sh 'git config --global user.email "gjuoun@gmail.com"'
-                sh 'git push -u origin master'
+                sh 'git push'
             }
         }
     }
