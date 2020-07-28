@@ -8,7 +8,6 @@ pipeline {
             steps {
                 sh 'echo ${JOB_NAME}-${BUILD_NUMBER}'
                 sh 'echo ${BUILD_ID}'
-                sh 'job url: ${JOB_URL}'
             }
         }
         stage('install') {
