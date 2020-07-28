@@ -21,6 +21,7 @@ pipeline {
             steps{
                 checkout scm
                 sh 'echo "update a file" > update.txt'
+                sh 'git status'
                 sh 'git add .'
                 sh 'git commit -m "jenkins test: update a file "'
                 sh 'echo $GITHUB_TOKEN'
