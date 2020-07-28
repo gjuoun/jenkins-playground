@@ -12,6 +12,7 @@ pipeline {
         }
         stage('install') {
             steps {
+                sh 'echo install'
             }
         }
         stage("update") {
