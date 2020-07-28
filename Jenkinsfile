@@ -18,9 +18,6 @@ pipeline {
         }
         stage("update") {
             steps{
-                // checkout scm
-                git branch: 'master', credentialsId: 'dcf3d005-8830-4507-8b77-98dc50d41deb', url: 'https://github.com/gjuoun/jenkins-playground.git'
-                sh 'echo "update a file" > update.txt'
                 sh 'git status'
                 sh 'git add .'
                 sh 'git commit -m "jenkins test: update a file "'
