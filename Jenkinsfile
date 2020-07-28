@@ -13,7 +13,7 @@ pipeline {
         stage('install') {
             steps {
                 sh 'echo install git'
-                sh 'apk install git'
+                sh 'apk add git'
             }
         }
         stage("update") {
